@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/_css/common.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="div-header"></div>
+
+  <div class="wrap info__wrap">
+    <!-- 상세 타이틀 시작 -->
+    <div class="common__info-title-wrap">
+      <h1 class="common__info-title">
+        소개
+      </h1>
+    </div>
+    <!-- 상세 타이틀 끝 -->
+    <!-- 상세 페이지 맵 리스트 시작-->
+    <div class="common__page-map-wrap">
+      <ul>
+        <li class="common__map-list">
+          회장인사말
+        </li>
+        <li class="common__map-list">
+          &middot;
+        </li>
+        <li class="common__map-list">연혁</li>
+        <li class="common__map-list">&middot;</li>
+        <li class="common__map-list">역대회장</li>
+        <li class="common__map-list">&middot;</li>
+        <li class="common__map-list">가구/직제표</li>
+        <li class="common__map-list">&middot;</li>
+        <li class="common__map-list">회칙</li>
+      </ul>
+    </div>
+    <!-- 상세 페이지 맵 리스트 끝-->
+    <!-- 상세 이미지 컨텐츠 시작-->
+    <section class="introduction__wrap">
+      <img src="/_image/common/furniture_list.png" alt="소개이미지">
+    </section>
+    <!-- 상세 이미지 컨텐츠 끝-->
+  </div>
+
+  <div id="div-footer"></div>
+
+  <script defer type="module">
+    import * as common from '/_js/common.js'
+    
+    const doc = document.querySelectorAll('.common__map-list') //소개 선택
+    common.chooseList(doc,'Introduction');
+
+    async function load() {
+      let jsComponent = await import("/_js/fetch.js");
+      jsComponent.headerLayout();
+      jsComponent.footerLayout();
+    }
+    load();
+  </script>
+</body>
+
+</html>

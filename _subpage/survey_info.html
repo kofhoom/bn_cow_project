@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/_css/common.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="div-header"></div>
+
+  <div class="wrap">
+    <!-- 상세 타이틀 시작 -->
+    <div class="common__info-title-wrap">
+      <h1 class="common__info-title">
+        회원전용
+      </h1>
+    </div>
+    <!-- 상세 타이틀 끝 -->
+    <!-- 상세 페이지 맵 리스트 시작-->
+    <div class="common__page-map-wrap">
+      <ul>
+        <li class="common__map-list">컨퍼런스 안내</li>
+        <li class="common__map-list">&middot;</li>
+        <li class="common__map-list">관련단체 학술행사안내</li>
+        <li class="common__map-list">&middot;</li>
+        <li class="common__map-list">기타 행사안내</li>
+      </ul>
+    </div>
+    <!-- 상세 페이지 맵 리스트 끝-->
+    <!-- 상세 컨텐츠 시작 -->
+    <section class="common__content mt40">
+      <div class="content__info-wrap">
+        <div class="content__info-header-top">
+          <span class="title">text</span>
+        </div>
+        <div class="content__info-header-bottom">
+          <span class="user-name">뿡뿡이</span>
+          <div class="written-box">
+            <span class="date">2022.02.23</span>
+          </div>
+        </div>
+        <div class="content__info-hits">
+          <span>조회수 293</span>
+        </div>
+        <div class="content__main-wrap">
+          <!-- 에디터 내용영역 -->
+          <div class="content__text"></div>
+          <!-- 질문 항목 리스트 시작-->
+          <div class="survey__content-wrap">
+            <p class="title">1. 질문입니다.</p>
+            <div class="comments__choose-radio-wrap">
+              <div class="comments__choose-radio-list">
+                <fieldset class="survey__radio-wrap">
+                  <label>
+                    <input type="radio" name="contact" value="email" checked />
+                    <span>실명</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="contact" value="phone" />
+                    <span>익명</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="contact" value="phone" />
+                    <span>익명</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="contact" value="phone" />
+                    <span>익명</span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <!-- 질문 항목 리스트 끝-->
+          <!-- 질문 항목 리스트 결과보기 상태 시작-->
+          <div class="survey__content-wrap result">
+            <p class="title">1. 질문입니다.</p>
+            <div class="comments__choose-radio-wrap">
+              <div class="comments__choose-radio-list">
+                <fieldset class="survey__radio-wrap">
+                  <label>
+                    <input type="radio" name="contact" value="email" checked />
+                    <span>실명</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="contact" value="phone" />
+                    <span>익명</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="contact" value="phone" />
+                    <span>익명</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="contact" value="phone" />
+                    <span>익명</span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <!-- 질문 항목 리스트 결과보기 상태  끝-->
+          <!-- 질문 항목 리스트 시작(주관식)-->
+          <div class="survey__content-wrap">
+            <p class="title">1. 질문입니다.</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <!-- 질문 항목 리스트 끝-->
+
+          <!-- 질문 항목 리스트 결과보기 상태 시작(주관식)-->
+          <div class="survey__content-wrap result">
+            <p class="title">1. 질문입니다.</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <!-- 질문 항목 리스트 결과보기 상태 끝-->
+
+          <div class="common__edit-list survey">
+            <button>제출하기</button>
+          </div>
+          <div class="common__edit-list survey">
+            <button>
+              <a target="_blank" href='/_subpage/survey_result.html'>결과 전체 보기</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 상세 컨텐츠 끝 -->
+  </div>
+
+  <div id="div-footer"></div>
+
+  <script defer type="module">
+    import * as common from '/_js/common.js'
+    
+    const doc = document.querySelectorAll('.common__map-list') //소개 선택
+
+    common.chooseList(doc,'introductionInfo');
+
+    async function load() {
+      let jsComponent = await import("/_js/fetch.js");
+      jsComponent.headerLayout();
+      jsComponent.footerLayout();
+    }
+    load();
+  </script>
+  <script>
+    const commonEditList = document.querySelectorAll('.common__edit-wrap img');
+
+    let state = false;
+
+    commonEditList.forEach(el => {
+      el.addEventListener('click', () => {
+        let editTarget = event.target.closest('.common__edit-wrap').querySelector('.common__edit-list');
+
+        for (let i = 0; i < commonEditList.length; i++) {
+          const editList = commonEditList[i].closest('.common__edit-wrap').querySelector('.common__edit-list');
+          editList.classList.remove('active')
+        }
+
+        state = !state
+
+        if (state) {
+          editTarget.classList.add('active')
+        } else {
+          editTarget.classList.remove('active')
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1342 @@
+@import 'reset.css';
+@import 'font.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'variable.css';
+@import 'main.css';
+
+/* ----- 공통 ------ */
+
+.screen--out {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+.wrap {
+  max-width: 122rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrap.info__wrap {
+  max-width: 192rem;
+  width: 100%;
+  min-height: calc(100vh - 29.6172rem);
+}
+
+/* 메인 */
+
+.common__title {
+  font-size: calc(var(--font-size-40));
+  font-family: "SCDream6";
+  font-weight: bold;
+}
+
+.section__inner {
+  width: calc(100% - 2rem);
+  max-width: 122rem;
+  margin: 0 auto;
+}
+
+/* 상세 타이틀 */
+.common__info-title-wrap {
+  max-width: 122rem;
+  width: calc(100% - var(--width-calc-20));
+  margin: 4rem auto;
+}
+
+.common__info-title {
+  font-family: "SCDream6";
+  font-size: var(--font-size-40);
+  color: var(--basic-color-main);
+  margin-bottom: 2.5rem
+}
+
+.common__page-map-wrap {
+  max-width: 122rem;
+  width: calc(100% - var(--width-calc-20));
+  margin: 0 auto;
+}
+
+.common__page-map-wrap>ul {
+  display: flex;
+  align-items: center;
+}
+
+.common__page-map-wrap>ul>li.common__map-list {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  margin-right: 1.2rem;
+  cursor: pointer;
+}
+
+.common__page-map-wrap>ul>li.common__map-list.active {
+  font-family: "SCDream6";
+  color: var(--basic-color-main);
+}
+
+.common__page-map-wrap>ul>li.common__map-list:last-child {
+  margin-right: 0;
+}
+
+/* 소개 상세 페이지 이미지 영역 */
+.introduction__wrap {
+  max-width: 192rem;
+  width: calc(100% - 2rem);
+  margin: 4rem auto;
+}
+
+.introduction__wrap img {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* 달력 big*/
+.calendar__wrap.big {
+  /* max-width: 66rem; */
+  width: calc(100% - var(--width-calc-20));
+  box-shadow: var(--basic-box-shadow);
+  background: var(--basic-color-white);
+  border-radius: .5rem;
+  margin: 0 auto 10rem;
+  padding: 0 2rem 2rem;
+  overflow: hidden;
+  background: var(--calendar-background-color);
+}
+
+.calendar__wrap.big .dateHead {
+  padding-bottom: 1rem;
+}
+
+.calendar__wrap.big .dateHead div {
+  background: var(--calendar-background-color);
+  font-size: 1.7rem;
+}
+
+.calendar__wrap .dateBoard.big div {
+  color: #222;
+  font-weight: bold;
+  min-height: 15.1rem;
+  padding: .6rem .8rem;
+  border-radius: 0;
+  border: 1px solid #eee;
+  background: #fff;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+/* 달력 small*/
+.calendar__wrap.small {
+  max-width: 66rem;
+  width: 100%;
+  box-shadow: var(--basic-box-shadow);
+  background: var(--basic-color-white);
+  border-radius: .5rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.calendar__wrap .dateBoard.small div {
+  color: #222;
+  font-weight: bold;
+  min-height: 7rem;
+  padding: .6rem .8rem;
+  border-radius: 0;
+  border: 1px solid #eee;
+  background: #fff;
+  font-family: "SCDream4";
+}
+
+/* 달력 공통 */
+.calendar__date-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.calendar_select-box {
+  height: max-content;
+  margin-left: auto;
+  position: absolute;
+  right: 0;
+}
+
+.calendar_select-box>select {
+  width: 16.5rem;
+  height: 3.6rem;
+  font-family: "SCDream4";
+  color: #707070;
+  border: 1px solid #8B8E91;
+  border-radius: .5rem;
+}
+
+.calendar__wrap .dateHead div {
+  background: var(--basic-color-white);
+  color: var(--basic-color-black);
+  text-align: center;
+  font-family: "SCDream4";
+
+}
+
+.calendar__wrap .grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 0px;
+}
+
+.calendar__wrap .dateHead {
+  /* margin-bottom: .4rem; */
+  font-family: "SCDream4";
+  font-size: var(--font-size-12);
+  border-bottom: 1px solid var(--basic-color-main);
+  padding-bottom: 0.4rem;
+}
+
+
+.calendar__wrap .grid div {
+  padding: .6rem;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.calendar__wrap .dateBoard {
+  background: var(--basic-color-white);
+  font-family: "SCDream4";
+  font-size: var(--font-size-12);
+}
+
+.calendar__wrap .noColor {
+  background: #eee !important;
+}
+
+.calendar__wrap .calendar__header {
+  display: flex;
+  justify-content: center;
+  padding: 1.8rem 2rem;
+  align-items: center;
+}
+
+.calendar__wrap .calendar__header.big {
+  display: flex;
+  justify-content: center;
+  padding: 4.1rem 2rem;
+  align-items: center;
+  position: relative;
+}
+
+.calendar__wrap .calendar__header.big .dateTitle {
+  font-family: "SCDream6";
+  font-size: 3rem;
+}
+
+.calendar__wrap .btn {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1.5px solid #AFAFAF;
+  border-width: 1.5px 1.5px 0 0;
+  cursor: pointer;
+}
+
+.calendar__wrap .prevDay {
+  transform: rotate(-135deg);
+  margin-right: 1.7rem;
+}
+
+.calendar__wrap .dateTitle {
+  font-family: "SCDream4";
+  font-size: var(--font-size-20);
+
+}
+
+.calendar__wrap .nextDay {
+  transform: rotate(45deg);
+  margin-left: 1.7rem;
+
+}
+
+.calendar__wrap .dateBoard div p {
+  font-weight: normal;
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.2rem;
+  width: fit-content;
+  font-family: "SCDream4";
+
+}
+
+.calendar__wrap.big .dateBoard div p {
+  font-size: 1.8rem;
+  border: none;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto;
+}
+
+/* 모달 */
+
+.common__modal-wrap {
+  display: none;
+  position: fixed;
+  width: calc(100% - var(--width-calc-20));
+  max-width: 50rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: var(--basic-color-white);
+  padding: 7.1rem 5rem;
+  text-align: center;
+  box-shadow: var(--basic-box-shadow);
+  border-radius: 10px;
+}
+
+.common__modal-wrap .common__modal-title {
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  margin-bottom: 3rem;
+}
+
+.common__modal-wrap .common__modal-content {
+  border-top: 1px solid var(--basic-color-main);
+  border-bottom: 1px solid var(--basic-color-main);
+}
+
+.common__modal-wrap .common__modal-list {
+  padding-top: 4.1rem;
+  padding-bottom: 4.1rem;
+}
+
+.common__modal-wrap .common__modal-items {
+  font-family: "SCDream4";
+  font-size: var(--font-size-21);
+  margin-bottom: 1.8rem;
+  cursor: pointer;
+}
+
+.common__modal-wrap .common__modal-items:hover {
+  color: var(--basic-color-blue);
+}
+
+.common__modal-wrap .common__modal-items:last-child {
+  margin-bottom: 0;
+}
+
+.common__btn-wrap button {
+  margin-top: 3rem;
+  max-width: 13rem;
+  height: 3.6rem;
+  width: calc(100% - var(--width-calc-20));
+  line-height: 3.6rem;
+  text-align: center;
+  color: var(--basic-color-white);
+  font-family: "SCDream6";
+  background: var(--point-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* 게시판 상세 */
+.common__content {
+  width: calc(100% - var(--width-calc-20));
+  margin: 0 auto;
+}
+
+.common__content-top {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+}
+
+.common__clipping-wrap {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.common__clipping-wrap>p {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+}
+
+.common__clipping-wrap>img {
+  display: block;
+  margin: 0 1rem;
+}
+
+.common__edit-wrap {
+  position: relative;
+}
+
+.common__edit-wrap img {
+  cursor: pointer;
+}
+
+.common__edit-wrap>.common__edit-list {
+  position: absolute;
+  width: 10rem;
+  padding: 1.2rem 0.9rem;
+  box-shadow: var(--basic-box-shadow);
+  border-radius: .5rem;
+  top: 3rem;
+  right: 0;
+  background: var(--basic-color-white);
+  display: none;
+}
+
+.common__edit-wrap>.common__edit-list.active {
+
+  display: block;
+}
+
+.common__edit-wrap>.common__edit-list div {
+  color: var(--basic-color-gray);
+  font-family: "SCDream4";
+  cursor: pointer;
+}
+
+.common__edit-wrap>.common__edit-list div:nth-child(1) {
+  margin-bottom: 1.5rem;
+}
+
+.content__info-wrap {
+  width: 100%;
+  border-top: 2px solid var(--basic-color-main);
+}
+
+.content__info-header-top {
+  padding: 3rem 2rem;
+  background: var(--header-m-list-background-color);
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  border-bottom: 1px solid var(--basic-color-main);
+}
+
+.content__info-header-top .count-num {
+  color: var(--basic-color-main);
+}
+
+.content__info-header-bottom {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--basic-color-main);
+
+}
+
+.content__info-header-bottom .user-name {
+  display: flex;
+  font-family: "SCDream6";
+  color: var(--basic-color-black2);
+  font-size: var(--font-size-18);
+}
+
+.written-box .categories__text {
+  font-family: "SCDream6";
+  font-size: var(--font-size-18);
+  color: var(--basic-color-black2);
+  margin-right: 1rem;
+}
+
+.written-box .date,
+.written-box .time {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+
+}
+
+.content__info-hits {
+  padding: 2rem 1rem;
+  text-align: right;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+
+}
+
+.content__main-wrap {
+  width: 100%;
+}
+
+.content__main-wrap .file__wrap {
+  width: 100%;
+  padding: 1.5rem 3rem;
+
+  min-height: 9rem;
+  background: var(--header-m-list-background-color);
+  display: flex;
+  align-items: center;
+}
+
+.file__name-wrap p {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+}
+
+.content__main-wrap .file__wrap .file__title {
+  border-right: 1px solid var(--border-bottom-color);
+  height: 6rem;
+  line-height: 6rem;
+  display: flex;
+  align-items: center;
+  padding-right: 3rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  color: var(--basic-color-black);
+
+
+}
+
+.content__main-wrap .file__wrap .file__name {
+  padding-left: 3rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+  margin-bottom: 1rem;
+}
+
+.content__main-wrap .file__wrap .file__name:last-child {
+  margin-bottom: 0rem;
+}
+
+.content__main-wrap .file__wrap .file__name img {
+  margin-right: 1rem;
+
+}
+
+.comments__wrap {
+  width: 100%;
+}
+
+.comments__wrap .comments__title {
+  width: 100%;
+  padding: 2rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  border-bottom: 1px solid var(--basic-color-main);
+}
+
+.comments__content {
+  width: 100%;
+}
+
+.comments__content .comments__content-header {
+  width: 100%;
+  padding: 3rem;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comments__content .comments__content-header .comments__content-info {
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+}
+
+.comments__content .comments__content-header .comments__content-info .id-name {
+  margin-right: 2rem;
+}
+
+.comments__content-body {
+  width: 100%;
+  padding: 3rem;
+  padding-bottom: 0;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.comments__recoment-text {
+  padding: 3rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.comments__recoment-admin-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #D3D3D3;
+  padding: 3rem;
+}
+
+.comments__recoment-nomal-wrap img.arrow,
+.comments__recoment-admin-wrap img.arrow {
+  margin-right: 3.5rem;
+}
+
+.comments__recoment-admin-text {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  line-height: 1.2;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.comments__recoment-nomal-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  border-top: 1px solid var(--border-bottom-color);
+}
+
+.comments__recoment-nomal-wrap.main {
+  background: var(--header-m-list-background-color);
+}
+
+.comments__recoment-nomal-wrap textarea {
+  width: calc(100% - 18.1rem);
+  height: 8rem;
+  border: 1px solid var(--border-bottom-color);
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  line-height: 1.2;
+  padding: 1.1rem;
+
+}
+
+.comments__recoment-nomal-wrap.main textarea {
+  width: calc(100% - 14rem);
+}
+
+.comments__choose-radio-wrap {
+  margin-left: 1rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.common__edit-list button {
+  width: 13rem;
+  height: 4rem;
+  background: var(--point-color);
+  color: var(--basic-color-white);
+  font-family: "SCDream6";
+  cursor: pointer;
+}
+
+.comments__choose-radio-list label {
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+}
+
+.common__golist-wrap {
+  margin-top: 8rem;
+  text-align: center;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  cursor: pointer;
+}
+
+.comments__content-recoment-wrap {
+  border-top: 1px solid var(--border-bottom-color);
+
+}
+
+.comments__content-recoment-wrap .comments__content-info {
+  margin-right: auto;
+  padding-left: 3rem;
+}
+
+.comments__content-recoment-wrap .comments__content-body {
+  padding-bottom: 3rem !important;
+}
+
+/* radio */
+.comments__choose-radio-list label {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding: 0.2em 0.4em;
+}
+
+.comments__choose-radio-list span {
+  vertical-align: middle;
+}
+
+.comments__choose-radio-list [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  transition: border 0.1s;
+}
+
+.comments__choose-radio-list [type="radio"]:checked {
+  background: #fff;
+  border: 0.4em solid tomato;
+}
+
+.comments__choose-radio-list [type="radio"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted tomato;
+}
+
+.comments__choose-radio-list [type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  cursor: pointer;
+}
+
+.comments__choose-radio-list [type="radio"]:disabled {
+  background-color: lightgray;
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.comments__choose-radio-list [type="radio"]:disabled+span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Global CSS */
+.comments__choose-radio-list fieldset {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* survey */
+.comments__choose-radio-list fieldset.survey__radio-wrap {
+  flex-direction: column;
+}
+
+.survey__content-wrap {
+  box-shadow: var(--basic-box-shadow);
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.survey__content-wrap.result {
+  background: #F5F5F5;
+}
+
+.survey__content-wrap.result .survey__radio-wrap {
+  pointer-events: none !important;
+}
+
+.survey__content-wrap.result .comments__choose-radio-list [type="radio"]:checked {
+  border: 0.4em solid #707070;
+}
+
+.survey__content-wrap.result textarea {
+  pointer-events: none;
+}
+
+.survey__content-wrap .comments__choose-radio-wrap {
+  height: auto;
+}
+
+.survey__content-wrap .title {
+  font-family: "SCDream6";
+  font-size: var(--font-size-18);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-bottom-color);
+  margin-bottom: 2rem;
+}
+
+.survey__radio-wrap label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.survey__radio-wrap input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.survey__content-wrap textarea {
+  width: 100%;
+  border: 1px solid #AFAFAF;
+  font-size: var(--font-size-18);
+  font-family: "SCDream4";
+  height: 16rem;
+  padding: 1rem;
+}
+
+
+.common__edit-list.survey button {
+  display: block;
+  margin: 0 auto;
+  max-width: 45rem;
+  width: 100%
+}
+
+.common__edit-list.survey button a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  line-height: 4rem;
+}
+
+/* 테이블 */
+.table__list-title-wrap {
+  border-top: 1px solid #AFAFAF;
+  padding: 2.5rem 0;
+  cursor: pointer;
+}
+
+.table__list-title-wrap .table__title {
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  margin-right: 3.5rem
+}
+
+.table__list-title-wrap .table__etc-text {
+  font-family: "SCDream4";
+  font-size: var(--font-size-21);
+  display: inline-flex;
+  align-items: center;
+}
+
+.table__list-title-wrap .table__etc-text img {
+  margin-left: 1rem;
+  display: block;
+  transform: rotate(180deg);
+}
+
+.table__list-title-wrap .table__etc-text img.active {
+
+  transform: rotate(0deg);
+}
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.tg td {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+
+.tg th {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+
+.tg .tg-bb8v {
+  background-color: #f8fbff;
+  border-color: #072a56;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.tg .tg-qtld {
+  background-color: #f8fbff;
+  border-color: #072a56;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.tg .tg-um4t {
+  background-color: #ffffff;
+  border-color: inherit;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: top
+}
+
+/* 기본 */
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+
+/* 스크롤 */
+.scroll__wrap {
+  overflow: auto;
+  border-top: 2px solid var(--basic-color-main);
+}
+
+.scroll__wrap::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll__wrap::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  background-color: #707070;
+  border-radius: 10px;
+}
+
+.scroll__wrap::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #efefef;
+}
+
+.c-table--scroll .scroll__wrap {
+  height: 300px;
+}
+
+.c-table--scroll table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+/* 스크롤 가로 */
+.c-table--scroll-row table {
+  width: 1220px;
+}
+
+.c-table--scroll-row {
+  margin-bottom: 4rem;
+  display: none;
+}
+
+.c-table--scroll-row:nth-child(1),
+.c-table--scroll-row.active {
+  display: block;
+}
+
+/*******************************************************************
+// 설명 : 공통 레이아웃 요소 정의
+********************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.common__form {
+  max-width: var(--common-form-size);
+  width: 100%;
+  margin: 40px auto 0;
+}
+
+.common-input__wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.main__inner {
+  width: calc(100% - 10px);
+  margin: 0 auto;
+}
+
+
+/*******************************************************************
+// 설명 : 공통 인풋 요소 정의
+********************************************************************/
+.input__inner {
+  display: flex;
+  align-items: center;
+  height: var(--common-input-wrap-height);
+}
+
+.input__inner input {
+  height: var(--common-input-wrap-height);
+}
+
+.common__form input:not(input[type='submit']) {
+  padding: 0 10px;
+  max-width: var(--common-input-size);
+  border: 1px solid var(--common-border-color);
+  height: inherit;
+  min-height: 30px;
+}
+
+/* 이메일 */
+.input__inner.email input[type='text'] {
+  max-width: 169px;
+  width: 100%;
+}
+
+.input__inner.email .email-type__select {
+  margin: 0 0 0 5px;
+  border: 1px solid var(--common-border-color);
+  font-size: var(--font-size-12);
+  width: var(--email-select-size);
+}
+
+.input__inner.email>.dot {
+  margin: 0 5px;
+}
+
+/* 체크박스 */
+.input__inner.radio>input[type='radio'] {
+  margin: 0 5px;
+}
+
+/* 주소 */
+.common-box__input.address {
+  display: flex;
+}
+
+.common-box__input.address .input__inner {
+  display: grid;
+  width: calc(100% - 100px);
+  grid-template-columns: repeat(3, minmax(calc(33.333% - 23px), auto));
+  gap: 0px 23px;
+}
+
+.common-box__input.address input {
+  max-width: var(--email-input-size);
+  width: 100%;
+}
+
+
+/*******************************************************************
+// 설명 : 공통 라벨 요소 정의
+********************************************************************/
+.common__form .common-box__label {
+  max-width: var(--label-width);
+  width: 100%;
+  font-weight: bold;
+  font-size: var(--font-size-14);
+}
+
+
+/*******************************************************************
+// 설명 : 공통 셀렉트 요소 정의
+// 참고 : select 높이는 부모 요소 높이를 참조
+********************************************************************/
+.common__form select {
+  height: inherit;
+  min-height: 30px;
+}
+
+
+/*******************************************************************
+// 설명 : 유효성 오류 메시지, 필수값 표시 텍스트 공통 정의
+********************************************************************/
+.important__star,
+.input-error__message {
+  font-size: var(--font-size-11);
+  color: var(--error-warning-red);
+}
+
+.validation__message {
+  margin-left: 10px;
+  font-size: var(--font-size-11);
+}
+
+
+/*******************************************************************
+// 설명 : 공통 버튼 요소 정의
+// 참고 : button 높이는 부모 요소 높이를 참조
+********************************************************************/
+.input-box__button {
+  height: inherit;
+}
+
+/* 파일첨부 버튼 */
+.file_insert_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  padding: 0 10px;
+  font-size: var(--font-size-12);
+  border: 1px solid var(--common-border-color);
+  cursor: pointer;
+}
+
+/* 회원가입 버튼 */
+.submit__btn {
+  width: 100%;
+  max-width: 100px;
+  height: 30px;
+  text-align: center;
+  display: block;
+  margin: 25px auto 0;
+  font-size: var(--font-size-12);
+  cursor: pointer;
+}
+
+/* 주소찾기 버튼 */
+.address__btn {
+  width: var(--address-search-btn-size);
+  height: var(--common-input-wrap-height);
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+
+/*******************************************************************
+// 설명 : 반응형 
+********************************************************************/
+@media (max-width:640px) {
+  .common-input__wrap {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .common__form .common-box__label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  /*------- 주소 -------*/
+  .common-box__input.address {
+    width: 100%;
+  }
+
+  .common-box__input.address .input__inner {
+    max-width: 395px;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(1, minmax(100%, auto));
+  }
+
+  .common-box__input.address .input__inner input {
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+
+  /* 주소찾기 버튼 */
+  .address__btn {
+    width: 70px;
+  }
+}
+
+@media (max-width:1000px) {
+  .calendar__wrap.small {
+    margin-bottom: 2rem;
+  }
+
+  .wrap.info__wrap {
+    min-height: calc(100vh - 24.2rem);
+  }
+
+  .wrap.event__information {
+    min-height: calc(100vh - 24.2rem);
+
+  }
+}
+
+@media (max-width:900px) {
+
+  .comments__recoment-nomal-wrap textarea {
+    font-size: 1.4rem;
+  }
+
+  .common__edit-wrap {
+    margin-left: 1rem;
+  }
+
+  .common__page-map-wrap {
+    margin-bottom: 3rem;
+  }
+
+  .common__page-map-wrap>ul>li.common__map-list {
+    margin-right: 0.7rem;
+  }
+
+  .comments__choose-radio-list label {
+    font-size: 1.2rem;
+  }
+
+  .common__info-title {
+    font-size: 1.8rem;
+  }
+
+  .common__info-title {
+    text-align: center;
+  }
+
+  .common__clipping-wrap>p {
+    font-size: 1.4rem;
+  }
+
+  .content__info-header-top {
+    padding: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .content__info-header-bottom .user-name {
+    font-size: 1.4rem;
+  }
+
+  .written-box .categories__text {
+    font-size: 1.4rem;
+  }
+
+  .written-box .date,
+  .written-box .time {
+    font-size: 1.4rem;
+  }
+
+  .content__info-hits {
+    font-size: 1.4rem;
+  }
+
+  .content__main-wrap .file__wrap .file__title {
+    font-size: 1.4rem;
+  }
+
+  .comments__wrap .comments__title {
+    font-size: 1.4rem;
+  }
+
+  .comments__content .comments__content-header {
+    padding: 1.5rem;
+  }
+
+  .comments__content-body {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .comments__recoment-text {
+    padding: 1.5rem;
+  }
+
+  .comments__recoment-admin-wrap {
+    padding: 1.5rem;
+  }
+
+  .comments__recoment-admin-text {
+    font-size: 1.4rem;
+  }
+
+  .comments__recoment-nomal-wrap {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+  }
+
+  .comments__recoment-nomal-wrap img.arrow,
+  .comments__recoment-admin-wrap img.arrow {
+    margin-right: 1.5rem;
+  }
+
+  .comments__recoment-nomal-wrap textarea {
+    width: calc(100% - 12rem);
+  }
+
+  .common__edit-list button {
+    width: 11rem;
+  }
+
+  .comments__recoment-nomal-wrap.main textarea {
+    width: calc(100% - 12rem);
+  }
+
+  .common__golist-wrap {
+    margin-top: 4rem;
+    font-size: 1.4rem;
+  }
+
+  .content__main-wrap .file__wrap {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .content__main-wrap .file__wrap .file__title {
+    padding-right: 1.5rem;
+  }
+
+  .common__page-map-wrap>ul>li.common__map-list {
+    font-size: 1.3rem;
+  }
+
+  .survey__content-wrap {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .common__edit-list.survey button {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width:640px) {
+  .common__modal-wrap {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .common__modal-wrap .common__modal-list {
+    padding-top: 2.1rem !important;
+    padding-bottom: 2.1rem !important;
+  }
+
+  .common__modal-wrap .common__modal-items {
+    font-size: 1.4rem !important;
+  }
+
+  .calendar__wrap .calendar__header.big {
+    padding: 4.1rem 0rem !important;
+    flex-direction: column;
+  }
+
+  .calendar_select-box {
+    position: relative !important;
+    margin-top: 2rem;
+  }
+
+  .calendar__wrap.big .dateBoard div {
+    min-height: 5rem !important;
+  }
+
+  .calendar_select-box>select {
+    width: 10.5rem !important;
+  }
+
+  .common__info-title-wrap.mb80 {
+    margin-bottom: 4rem !important;
+  }
+
+  .calendar__wrap .calendar__header.big .dateTitle {
+    font-size: 2rem !important;
+  }
+
+}
+
+@media (max-width:600px) {
+  .calendar__wrap.big .dateBoard div p {
+    font-size: 1.2rem !important;
+  }
+
+  .calendar__wrap.small .dateBoard div {
+    min-height: 5rem;
+  }
+
+  .common__info-title-wrap {
+    margin: 2rem auto;
+  }
+
+
+}

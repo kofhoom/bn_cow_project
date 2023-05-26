@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/_css/common.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<style>
+  .event__information {
+    background: url('/_image/common/event_information_background.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+</style>
+
+<body class="event__information">
+  <!-- 모달 시작-->
+  <div class="common__modal-wrap">
+    <div class="common__modal-title">05월 21일</div>
+    <div class="common__modal-content">
+      <ul class="common__modal-list">
+        <li class="common__modal-items">· 춘계 학술대회 - 전북대학교 진수당</li>
+        <li class="common__modal-items">· 춘계 학술대회 - 전북대학교 진수당</li>
+      </ul>
+    </div>
+    <div class="common__btn-wrap">
+      <button onclick="modalState('none')">확인</button>
+    </div>
+  </div>
+  <!-- 모달 끝-->
+
+  <div id="div-header"></div>
+  <div class="wrap event__information">
+    <!-- 상세 타이틀 시작 -->
+    <div class="common__info-title-wrap mb80">
+      <h1 class="common__info-title">
+        행사안내
+      </h1>
+    </div>
+    <!-- 상세 타이틀 끝 -->
+    <div class='calendar__wrap big'>
+      <div class="calendar__header big">
+        <div class="calendar__date-wrap">
+          <div class="btn prevDay"></div>
+          <h2 class='dateTitle'></h2>
+          <div class="btn nextDay"></div>
+        </div>
+        <div class="calendar_select-box">
+          <select name="" id="">
+            <option value="zxc">전체</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid dateHead">
+        <div class="basic-red-color">일요일</div>
+        <div>월요일</div>
+        <div>화요일</div>
+        <div>수요일</div>
+        <div>목요일</div>
+        <div>금요일</div>
+        <div class="basic-blue-color">토요일</div>
+      </div>
+      <div class="grid dateBoard big"></div>
+    </div>
+  </div>
+
+  <div id="div-footer"></div>
+
+  <script defer type="module">
+    import * as common from '/_js/common.js'
+
+    // 임시 데이터
+    const data = [{
+        date: '2022-10-15',
+        content: '· 테스트1'
+      },
+      {
+        date: '2022-10-03',
+        content: '· 테스트2'
+      },
+      {
+        date: '2022-10-15',
+        content: '· 테스트3'
+      },
+      {
+        date: '2022-10-26',
+        content: '· 테스트4'
+      },
+      {
+        date: '2023-05-25',
+        content: '· 테스트5'
+      },
+      {
+        date: '2023-05-25',
+        content: '· 테스트5'
+      },
+    ];
+
+    common.calRender(data);
+
+    async function load() {
+      let jsComponent = await import("/_js/fetch.js");
+      jsComponent.headerLayout();
+      jsComponent.footerLayout();
+    }
+    load();
+
+  </script>
+  <script defer>
+    function modalState(state) {
+      const commonModal = document.querySelector('.common__modal-wrap');
+      commonModal.style.display = state;
+    }
+  </script>
+</body>
+
+</html>

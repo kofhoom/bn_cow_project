@@ -1,0 +1,94 @@
+:root {
+  /* 공통 사이즈 */
+  --font-size-40: 4rem;
+  --font-size-30: 3rem;
+  --font-size-21: 2.1rem;
+  --font-size-20: 2rem;
+  --font-size-18: 1.8rem;
+  --font-size-16: 1.6rem;
+  --font-size-15: 1.5rem;
+  --font-size-14: 1.4rem;
+  --font-size-12: 1.2rem;
+  --font-size-11: 1.1rem;
+  --border-radius-10: 1rem;
+  --width-calc-20: 2rem;
+  --email-select-size: 10.2rem;
+  --address-search-btn-size: 10.2rem;
+  --label-width: 13.6rem;
+  --common-form-size: 60.7rem;
+
+  --common-input-wrap-height: 3rem;
+  --common-input-size: 17.1rem;
+  --email-input-size: 30rem;
+  /* 공통 컬러 */
+  --point-color: #ec622e;
+  --basic-color-main: #072a56;
+  --basic-color-white: #ffffff;
+  --basic-color-gray: #707070;
+  --basic-color-black: #000000;
+  --basic-color-black2: #1C1C1C;
+  --header-m-list-background-color: #F8FBFF;
+  --border-bottom-color: #AFAFAF;
+
+  --basic-color-red: #F94E59;
+  --basic-color-blue: #3054B5;
+  --error-warning-red: red;
+  --common-border-color: #aaaaaa;
+
+  --basic-box-shadow: 0 .3rem .6rem #00000040;
+
+  --calendar-background-color: #F8FBFF;
+}
+
+.primary-white-color {
+  color: var(--basic-color-white);
+}
+
+.basic-red-color {
+  color: var(--basic-color-red) !important;
+}
+
+.basic-blue-color {
+  color: var(--basic-color-blue) !important;
+}
+
+.basic-main-color {
+  color: var(--basic-color-main) !important;
+}
+
+.calendar-active-style span {
+  display: inline-block;
+  font-family: "SCDream4";
+  background: var(--basic-color-main);
+  padding: 0.3rem 0.2rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.calendar-active-style p {
+  border-bottom: 1px solid var(--basic-color-main);
+}
+
+.mt40 {
+  margin-top: 4rem !important;
+}
+
+.mb20 {
+  margin-bottom: 2rem;
+}
+
+.mb30 {
+  margin-bottom: 3rem;
+}
+
+.mb40 {
+  margin-bottom: 4rem;
+}
+
+.mb80 {
+  margin-bottom: 8rem !important;
+}
+
+.ml5 {
+  margin-left: .5rem;
+}
