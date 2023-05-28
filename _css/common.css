@@ -6,7 +6,15 @@
 @import 'main.css';
 
 /* ----- 공통 ------ */
-
+hr {
+  display: block;
+  margin-bottom: 3rem;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  width: 100%;
+  background: #D3D3D3;
+}
 .screen--out {
   overflow: hidden;
   position: absolute;
@@ -26,6 +34,11 @@
   max-width: 192rem;
   width: 100%;
   min-height: calc(100vh - 29.6172rem);
+}
+
+.wrap.sign-up .common__content {
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* 메인 */
@@ -618,18 +631,28 @@
   justify-content: space-between;
 }
 
-.common__edit-list button {
+.common__edit-list button,
+.common__edit-list input[type='submit'] {
   width: 13rem;
   height: 4rem;
   background: var(--point-color);
   color: var(--basic-color-white);
   font-family: "SCDream6";
   cursor: pointer;
+  outline: none;
 }
 
 .comments__choose-radio-list label {
   font-family: "SCDream4";
   font-size: var(--font-size-15);
+}
+
+.comments__choose-radio-list.double {
+  flex-direction: row !important;
+}
+
+.comments__choose-radio-list.double label {
+  margin-bottom: 0 !important;
 }
 
 .common__golist-wrap {
@@ -773,12 +796,13 @@
   padding: 1rem;
 }
 
-
+.common__edit-list input[type='submit'],
 .common__edit-list.survey button {
   display: block;
   margin: 0 auto;
   max-width: 45rem;
-  width: 100%
+  width: 100%;
+  border: none
 }
 
 .common__edit-list.survey button a {
@@ -933,23 +957,101 @@ table {
 /*******************************************************************
 // 설명 : 공통 레이아웃 요소 정의
 ********************************************************************/
-* {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  box-sizing: border-box;
-}
-
 .common__form {
-  max-width: var(--common-form-size);
+  /* max-width: var(--common-form-size); */
   width: 100%;
   margin: 40px auto 0;
+}
+
+.common__form fieldset {
+  width: 100%;
+  background: var(--common-form-fieldset-color);
+  margin-bottom: 4rem;
+  padding: 5rem 0;
+}
+
+.common__form fieldset.common__agree-wrap {
+  background: inherit;
+  padding: 0 1rem;
+}
+
+.common__form fieldset.common__agree-wrap:nth-of-type(4) {
+  padding-bottom: 4rem !important;
+  border-bottom: 1px solid var(--border-bottom-color) !important;
+}
+
+.common__form fieldset.common__agree-wrap .common__form-agree-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+}
+
+.common__form fieldset.common__agree-wrap .common__form-agree-title span {
+  color: var(--basic-color-main);
+}
+
+.common__form fieldset.common__agree-wrap .common__form-content {
+  border: 1px solid var(--common-border-color);
+  border-radius: .5rem;
+  background: var(--common-form-fieldset-color);
+  padding: 1.2rem;
+  position: relative;
+  height: 4.5rem;
+  overflow: hidden;
+  font-size: var(--font-size-15);
+  font-family: "SCDream4";
+  color: var(--common-form-agree-content-color);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.common__form fieldset.common__agree-wrap .common__form-content.active {
+  overflow: auto;
+  height: 39rem;
+}
+
+.common__form fieldset.common__agree-wrap .common__form-content p {
+  white-space: pre-wrap;
+}
+
+.common__form fieldset.common__agree-wrap .common__form-content img {
+  position: absolute;
+  top: 1.9rem;
+  right: 1.261rem;
+}
+
+.common__form fieldset.common__agree-wrap .common__form-content.active img {
+  transform: rotate(180deg);
+}
+.common__form.password_check fieldset .common__fieldset-inner {
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.common__form fieldset .common__fieldset-inner {
+  max-width: var(--common-form-size);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.common__form fieldset .common__fieldset-inner>.title {
+  text-align: center;
+  font-family: "SCDream5";
+  font-size: var(--font-size-18);
+  margin-bottom: 3rem;
+}
+
+.common__form fieldset .common-input__wrap:last-child {
+  margin-bottom: 0 !important;
 }
 
 .common-input__wrap {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 3rem;
 }
 
 .main__inner {
@@ -967,17 +1069,41 @@ table {
   height: var(--common-input-wrap-height);
 }
 
-.input__inner input {
+.input__inner input 
+{
   height: var(--common-input-wrap-height);
 }
+.common-box__input {
+  width: 100%;
+}
+.input__inner .content__list-text {
+  display: flex;
+  align-items: center;
+  height: var(--common-input-wrap-height);
+  width: 100%;
+  font-family: "SCDream4";
 
-.common__form input:not(input[type='submit']) {
+}
+
+.common__form input[type='radio'] {
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  min-height: 1.8rem !important;
+  padding: 0 !important;
+}
+
+.common__form input:not(input[type='submit'],input[type='radio']) {
   padding: 0 10px;
   max-width: var(--common-input-size);
   border: 1px solid var(--common-border-color);
   height: inherit;
-  min-height: 30px;
+  min-height: 3.6rem;
+  width: 100%;
+  border-radius: .3rem;
+  font-family: "SCDream4";
+
 }
+
 
 /* 이메일 */
 .input__inner.email input[type='text'] {
@@ -990,15 +1116,81 @@ table {
   border: 1px solid var(--common-border-color);
   font-size: var(--font-size-12);
   width: var(--email-select-size);
+  color: #707070;
+  font-family: "SCDream4";
+
 }
 
 .input__inner.email>.dot {
   margin: 0 5px;
 }
 
-/* 체크박스 */
+/* rdaio */
+.input__inner.radio {
+  height: auto;
+}
+
+.input__inner.radio .comments__choose-radio-list {
+  display: flex;
+  flex-direction: column;
+}
+
 .input__inner.radio>input[type='radio'] {
   margin: 0 5px;
+}
+
+.input__inner.radio label {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  margin-bottom: 2.3rem;
+}
+
+/* checkbox */
+.common__form input[type="checkbox"] {
+  display: none;
+}
+
+.common__form input[type="checkbox"]+label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #707070;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.common__form input[id="check1"]:checked+label::after {
+  content: '✔';
+  font-size: 15px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  left: -2px;
+  top: 1px;
+  /* box-sizing: border-box; */
+  color: var(--point-color);
+}
+.common__form input[id="check1"]:checked+label::after {
+  content: '✔';
+  font-size: 15px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  left: -2px;
+  top: 1px;
+  /* box-sizing: border-box; */
+  color: var(--point-color);
+}
+.input__inner.bank-account input:nth-child(1) {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.input__inner.bank-account input:nth-child(2) {
+  flex: 2;
 }
 
 /* 주소 */
@@ -1009,8 +1201,9 @@ table {
 .common-box__input.address .input__inner {
   display: grid;
   width: calc(100% - 100px);
-  grid-template-columns: repeat(3, minmax(calc(33.333% - 23px), auto));
-  gap: 0px 23px;
+  grid-template-columns: repeat(1, minmax(100%, auto));
+  gap: 1rem 0;
+  height: auto;
 }
 
 .common-box__input.address input {
@@ -1025,8 +1218,12 @@ table {
 .common__form .common-box__label {
   max-width: var(--label-width);
   width: 100%;
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
   font-weight: bold;
-  font-size: var(--font-size-14);
+  text-align: right;
+  margin-right: 4rem;
+
 }
 
 
@@ -1036,7 +1233,13 @@ table {
 ********************************************************************/
 .common__form select {
   height: inherit;
-  min-height: 30px;
+  min-height: 3.6rem;
+  width: 100%;
+  border: 1px solid var(--common-border-color);
+  border-radius: 0.3rem;
+  font-size: var(--font-size-14);
+  font-family: "SCDream4";
+  color: #707070;
 }
 
 
@@ -1045,8 +1248,10 @@ table {
 ********************************************************************/
 .important__star,
 .input-error__message {
-  font-size: var(--font-size-11);
+  font-size: var(--font-size-13);
   color: var(--error-warning-red);
+  font-family: "SCDream4";
+  line-height: 1.3;
 }
 
 .validation__message {
@@ -1083,7 +1288,7 @@ table {
   text-align: center;
   display: block;
   margin: 25px auto 0;
-  font-size: var(--font-size-12);
+  font-size: var(--font-size-18);
   cursor: pointer;
 }
 
@@ -1093,6 +1298,11 @@ table {
   height: var(--common-input-wrap-height);
   margin-left: 6px;
   cursor: pointer;
+  border-radius: 2rem;
+  background: var(--point-color);
+  color: #fff;
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
 }
 
 
@@ -1100,6 +1310,30 @@ table {
 // 설명 : 반응형 
 ********************************************************************/
 @media (max-width:640px) {
+  .common__form fieldset .common__fieldset-inner {
+    width: calc(100% - var(--width-calc-20));
+  }
+
+  .common__form-agree-title {
+    font-size: 1.6rem !important;
+  }
+
+  .common__form fieldset.common__agree-wrap .common__form-content p {
+    font-size: 1.2rem;
+  }
+
+  .input__inner.radio label {
+    margin-bottom: 1.2rem;
+  }
+
+  .input-error__message {
+    font-size: 1rem;
+  }
+  .input__inner .content__list-text,
+  .comments__choose-radio-list span {
+    font-size: 1.6rem;
+  }
+
   .common-input__wrap {
     align-items: start;
     flex-direction: column;
@@ -1109,6 +1343,7 @@ table {
   .common__form .common-box__label {
     font-size: 13px;
     margin-bottom: 5px;
+    text-align: left;
   }
 
   /*------- 주소 -------*/
@@ -1131,6 +1366,7 @@ table {
   /* 주소찾기 버튼 */
   .address__btn {
     width: 70px;
+    font-size: 1.2rem;
   }
 }
 
