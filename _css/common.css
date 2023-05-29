@@ -35,12 +35,35 @@ hr {
   width: 100%;
   min-height: calc(100vh - 29.6172rem);
 }
-
+.wrap.password__change {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrap.password__change .common__content,
 .wrap.sign-up .common__content {
   width: 100%;
   margin: 0 auto;
 }
+.wrap.withdrawal .form__wrap {
+  max-width: 80rem;
+  width: 100%;
+  box-shadow: var(--basic-box-shadow);
+  text-align: center;
+  border-radius: 1rem;
+  padding: 8.4rem 0;
+  margin: 0 auto;
+}
+.withdrawal__content > p{
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  line-height: 2.5rem;
+  margin-bottom: 5.5rem;
+}
 
+.wrap.withdrawal .form__wrap .common__btn-small {
+  width: 13rem !important;
+}
 /* 메인 */
 
 .common__title {
@@ -962,7 +985,12 @@ table {
   width: 100%;
   margin: 40px auto 0;
 }
-
+.common__form .common__form-title {
+text-align: center;
+font-family: "SCDream6";
+font-size: var(--font-size-21);
+margin-bottom: 4rem;
+}
 .common__form fieldset {
   width: 100%;
   background: var(--common-form-fieldset-color);
@@ -1028,7 +1056,7 @@ table {
 }
 .common__form.password_check fieldset .common__fieldset-inner {
   max-width: 60rem;
-  width: 100%;
+  width: calc(100% - var(--width-calc-20));
   margin: 0 auto;
 }
 .common__form fieldset .common__fieldset-inner {
@@ -1292,8 +1320,8 @@ table {
   cursor: pointer;
 }
 
-/* 주소찾기 버튼 */
-.address__btn {
+/* 버튼 공통 small */
+.common__btn-small {
   width: var(--address-search-btn-size);
   height: var(--common-input-wrap-height);
   margin-left: 6px;
@@ -1304,12 +1332,121 @@ table {
   font-family: "SCDream4";
   font-size: var(--font-size-15);
 }
+.common__btn-small.mauto {
+  display: block;
+  margin-left: 0;
+  margin: 0 auto;
+}
+/* 글작성 페이지 */
+.wrap.board_writing .common__content {
+  margin-top: 4rem;
+}
+.wrap.board_writing .common__content-wrap {
+  width: 100%;
+}
+.wrap.board_writing .common__content-wrap .board__list-box{
+  height: 9rem;
+  display: flex;
+  align-items: center;
+  background: #F8FBFF;
+  border-top: 1px solid #707070;
+  width: 100%;
+}
 
+.wrap.board_writing .common__content-wrap .board__list-box.file {
+  height: 6.9rem;
+}
+.wrap.board_writing .common__content-wrap .board__list-box.file .title{
+  line-height: 6.9rem;
+}
+.wrap.board_writing .common__content-wrap .board__list-box .title{
+  width: 14.1rem;
+  text-align: center;
+  font-family: "SCDream6";
+  font-size: var(--font-size-18);
+  border-right: 1px solid #707070;
+  height: 100%;
+  line-height: 9rem;
+}
+.wrap.board_writing .common__btn-small {
+  display: block;
+  text-align: center;
+  line-height: 3.6rem;
+}
+.wrap.board_writing .board__list-box .content{
+width: 100%;
+padding: 0 1.4rem;
+}
+.wrap.board_writing .board__list-box .content.file {
+  display: flex;
+  align-items: center;
+}
+.wrap.board_writing .board__list-box .content.file .file__name {
+  margin-left: 1rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+}
+.wrap.board_writing .board__list-box .content input {
+  height: 5rem;
+  width: 100%;
+  font-size: var(--font-size-15);
+  padding: 0 1rem;
+  font-family: "SCDream4";
+}
 
+.board__type-choose-box {
+  height: 6.9rem;
+  line-height: 6.9rem;
+  text-align: center;
+  background: #F8FBFF;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+}
+
+.common__btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+.square__gray-color{
+  background: #707070 !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-size: 1.5rem;
+}
+.square__orange-color {
+  border-radius: 0 !important;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
 /*******************************************************************
 // 설명 : 반응형 
 ********************************************************************/
 @media (max-width:640px) {
+  .wrap.board_writing .common__content-wrap .board__list-box .title {
+    font-size: 1.4rem;
+    width: 10.1rem;
+  }
+  .wrap.withdrawal .form__wrap {
+    padding: 3rem 0;
+  }
+  .wrap.withdrawal .common__form {
+    margin: 20px auto 0;
+  }
+
+  .common__form .common__form-title {
+    margin-bottom: 2rem;
+  }
+  .withdrawal__content {
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+  }
+  .withdrawal__content > p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+  .wrap.password__change .common__fieldset-inner {
+    max-width: 36rem !important;
+  }
   .common__form fieldset .common__fieldset-inner {
     width: calc(100% - var(--width-calc-20));
   }
@@ -1364,7 +1501,7 @@ table {
   }
 
   /* 주소찾기 버튼 */
-  .address__btn {
+  .common__btn-small {
     width: 70px;
     font-size: 1.2rem;
   }

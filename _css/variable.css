@@ -86,7 +86,9 @@
 .mb40 {
   margin-bottom: 4rem;
 }
-
+.mb40-important {
+  margin-bottom: 4rem !important;
+}
 .mb80 {
   margin-bottom: 8rem !important;
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/_css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="div-header"></div>
+
+    <div class="wrap board_writing">
+        <!-- 상세 타이틀 시작 -->
+        <div class="common__info-title-wrap">
+            <h1 class="common__info-title">
+                회원전용
+            </h1>
+        </div>
+        <!-- 상세 타이틀 끝 -->
+        <!-- 상세 페이지 맵 리스트 시작-->
+        <div class="common__page-map-wrap">
+            <ul>
+                <li class="common__map-list">정책홍복</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">의견조회</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">학술정보</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">강의자료</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">증례 공유/질문</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">우리 회에 바라는 점</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">자유게시판</li>
+                <li class="common__map-list">&middot;</li>
+                <li class="common__map-list">설문조사</li>
+            </ul>
+        </div>
+        <!-- 상세 페이지 맵 리스트 끝-->
+        <!-- 상세 컨텐츠 시작 -->
+        <section class="common__content">
+            <div class="common__content-wrap">
+                <div class="board__list-box">
+                    <div class="title">제목</div>
+                    <div class="content">
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="board__list-box">
+                    <div class="title">내용</div>
+                    <div class="content">
+                        <!-- 에디터 들어갈곳 -->
+                    </div>
+                </div>
+                <div class="board__list-box file">
+                    <div class="title">파일 추가</div>
+                    <div class="content file">
+                        <label for="file_input" class="common__btn-small">파일선택
+                        </label>
+                        <input type="file" hidden id="file_input">
+                        <span class="file__name">flie.png</span>
+                    </div>
+                </div>
+                <div class="board__type-choose-box">
+                    <div class="comments__choose-radio-list">
+                        <label for="animal_check1">
+                            <input type="radio" id="animal_check1" class="animal-check__radio" name="animal_check"
+                                value="실명" />
+                            <span>실명</span>
+                        </label>
+                        <label for="animal_check2">
+                            <input type="radio" id="animal_check2" class="animal-check__radio" name="animal_check"
+                                value="익명" />
+                            <span>익명</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="common__btn-wrap">
+                    <button class="common__btn-small square__gray-color">등록취소</button>
+                    <button class="common__btn-small square__orange-color">등록하기</button>
+                </div>
+            </div>
+        </section>
+        <!-- 상세 컨텐츠 끝 -->
+    </div>
+
+    <div id="div-footer"></div>
+
+    <script defer type="module">
+        import * as common from '/_js/common.js'
+    
+    const doc = document.querySelectorAll('.common__map-list') //소개 선택
+
+    common.chooseList(doc,'introductionInfo');
+        
+    async function load() {
+      let jsComponent = await import("/_js/fetch.js");
+      jsComponent.headerLayout();
+      jsComponent.footerLayout();
+    }
+    load();
+  </script>
+
+</body>
+
+</html>
