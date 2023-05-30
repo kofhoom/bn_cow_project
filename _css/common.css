@@ -15,6 +15,7 @@ hr {
   width: 100%;
   background: #D3D3D3;
 }
+
 .screen--out {
   overflow: hidden;
   position: absolute;
@@ -24,10 +25,42 @@ hr {
   text-indent: -9999px;
 }
 
+body.background__F8F8FF {
+  background: #F8FBFF;
+}
+
 .wrap {
   max-width: 122rem;
   width: 100%;
   margin: 0 auto;
+  min-height: calc(100vh - 395px);
+}
+.wrap.main {
+  max-width: 122rem;
+  width: 100%;
+  margin: 0 auto;
+  min-height: inherit !important;
+}
+.wrap.id_find,
+.wrap.password_find {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 255px);
+
+}
+.wrap.id_find .common__user-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrap.id_find .common__user-inner {
+  max-width: 45rem;
+  width: 100%;
+}
+.wrap.login {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 355px);
 }
 
 .wrap.info__wrap {
@@ -35,16 +68,19 @@ hr {
   width: 100%;
   min-height: calc(100vh - 29.6172rem);
 }
+
 .wrap.password__change {
   max-width: 80rem;
   width: 100%;
   margin: 0 auto;
 }
+
 .wrap.password__change .common__content,
 .wrap.sign-up .common__content {
   width: 100%;
   margin: 0 auto;
 }
+
 .wrap.withdrawal .form__wrap {
   max-width: 80rem;
   width: 100%;
@@ -54,7 +90,8 @@ hr {
   padding: 8.4rem 0;
   margin: 0 auto;
 }
-.withdrawal__content > p{
+
+.withdrawal__content>p {
   font-family: "SCDream4";
   font-size: var(--font-size-18);
   line-height: 2.5rem;
@@ -64,6 +101,7 @@ hr {
 .wrap.withdrawal .form__wrap .common__btn-small {
   width: 13rem !important;
 }
+
 /* 메인 */
 
 .common__title {
@@ -319,7 +357,7 @@ hr {
 /* 모달 */
 
 .common__modal-wrap {
-  display: none;
+  display: block;
   position: fixed;
   width: calc(100% - var(--width-calc-20));
   max-width: 50rem;
@@ -328,10 +366,18 @@ hr {
   transform: translate(-50%, -50%);
   z-index: 9999;
   background: var(--basic-color-white);
-  padding: 7.1rem 5rem;
+  padding: 7.1rem 3rem;
   text-align: center;
   box-shadow: var(--basic-box-shadow);
   border-radius: 10px;
+}
+
+
+
+.common__modal-wrap .common__modal-content-title {
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  margin-bottom: 1rem;
 }
 
 .common__modal-wrap .common__modal-title {
@@ -340,9 +386,25 @@ hr {
   margin-bottom: 3rem;
 }
 
-.common__modal-wrap .common__modal-content {
+.common__modal-wrap .common__modal-content-subtitle {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+}
+
+.common__modal-wrap .common__modal-title {
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  margin-bottom: 3rem;
+}
+
+.common__modal-wrap .common__modal-title .common__modal-wrap .common__modal-content {
   border-top: 1px solid var(--basic-color-main);
   border-bottom: 1px solid var(--basic-color-main);
+}
+
+.common__modal-wrap .common__modal-content.nomal {
+  border-top: none;
+  border-bottom: none;
 }
 
 .common__modal-wrap .common__modal-list {
@@ -365,6 +427,10 @@ hr {
   margin-bottom: 0;
 }
 
+.common__modal-wrap .common__btn-wrap {
+  justify-content: center;
+}
+
 .common__btn-wrap button {
   margin-top: 3rem;
   max-width: 13rem;
@@ -376,6 +442,18 @@ hr {
   font-family: "SCDream6";
   background: var(--point-color);
   border-radius: 20px;
+  cursor: pointer;
+}
+
+p.common__btn {
+  margin-top: 3rem;
+  height: 5rem;
+  width: 100%;
+  line-height: 5rem;
+  text-align: center;
+  color: var(--basic-color-white);
+  font-family: "SCDream6";
+  background: var(--point-color);
   cursor: pointer;
 }
 
@@ -952,6 +1030,29 @@ table {
   background-color: #efefef;
 }
 
+.c-table.board tr {
+  height: 6.1rem;
+}
+
+.c-table tr:hover {
+  background: #f1f1f1;
+  transition: all .2s;
+}
+
+.c-table tr th {
+  background: var(--table-th-background-color);
+  font-family: "SCDream6";
+  font-size: var(--font-size-18);
+}
+
+.c-table tr td {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  border-top: 1px solid var(--basic-color-main);
+  cursor: pointer;
+
+}
+
 .c-table--scroll .scroll__wrap {
   height: 300px;
 }
@@ -977,6 +1078,92 @@ table {
   display: block;
 }
 
+/* 테이블 탑/검색 영역 */
+.table__top-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.table__top-wrap .total__count {
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+}
+
+.table__top-wrap .table__searching-content {
+  display: flex;
+  height: 3.6rem;
+}
+
+.table__top-wrap .search__box {
+  width: 24rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+
+}
+
+.table__top-wrap .search__box input {
+  width: calc(100% - 35px);
+  height: 100%;
+  border: 1px solid #8B8E91;
+  border-radius: .3rem 0 0 .3rem;
+
+}
+
+.table__searching-content select {
+  width: 12rem;
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+  border: 1px solid #8B8E91;
+  border-radius: .3rem;
+  padding: 0 0.5rem;
+}
+
+.table__searching-content select:first-child {
+  margin-right: 2rem;
+}
+
+/* 페이지 네이션  */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.pagination .page-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 0px;
+  margin: 0 15px;
+}
+
+.pagination .page__link {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.pagination .page__link>a {
+  display: block;
+  text-align: center;
+  line-height: 3.6rem;
+  font-family: "SCDream4";
+  font-size: 1.5rem;
+}
+
+.pagination .page__link.on {
+  background: var(--point-color);
+  outline: 1px solid var(--point-color);
+  border-radius: .4rem;
+  color: #fff;
+}
+
 /*******************************************************************
 // 설명 : 공통 레이아웃 요소 정의
 ********************************************************************/
@@ -985,12 +1172,14 @@ table {
   width: 100%;
   margin: 40px auto 0;
 }
+
 .common__form .common__form-title {
-text-align: center;
-font-family: "SCDream6";
-font-size: var(--font-size-21);
-margin-bottom: 4rem;
+  text-align: center;
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  margin-bottom: 4rem;
 }
+
 .common__form fieldset {
   width: 100%;
   background: var(--common-form-fieldset-color);
@@ -1054,11 +1243,13 @@ margin-bottom: 4rem;
 .common__form fieldset.common__agree-wrap .common__form-content.active img {
   transform: rotate(180deg);
 }
+
 .common__form.password_check fieldset .common__fieldset-inner {
   max-width: 60rem;
   width: calc(100% - var(--width-calc-20));
   margin: 0 auto;
 }
+
 .common__form fieldset .common__fieldset-inner {
   max-width: var(--common-form-size);
   width: 100%;
@@ -1087,6 +1278,161 @@ margin-bottom: 4rem;
   margin: 0 auto;
 }
 
+/* 로그인 / 비밀번호 찾기 */
+
+.common__user-wrap {
+  max-width: 80rem;
+  width: 100%;
+  height: 52.3rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 6.3rem 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--basic-box-shadow);
+}
+
+.common__user-wrap h1 {
+  text-align: center;
+  margin-bottom: 5rem;
+  font-family: "SCDream6";
+  font-size: 4.8rem;
+  color: var(--basic-color-main);
+}
+
+.common__user-wrap h1.small {
+  text-align: center;
+  margin-bottom: 5rem;
+  font-family: "SCDream6";
+  font-size: 3rem;
+  color: var(--basic-color-main);
+}
+
+.common__user-wrap {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.user__result_wrap {
+  max-width: 45rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.common__user-wrap form {
+  max-width: 45rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.common__user-wrap .password__answer-select,
+.common__user-wrap input {
+  width: 100%;
+  height: 4.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #AFAFAF;
+  border-radius: 5px;
+  font-family: "SCDream4";
+  color: var(--basic-color-gray);
+  padding: 0 1.2rem;
+  font-size: var(--font-size-18);
+}
+
+.common__user-wrap select {
+  margin-bottom: 1rem !important;
+}
+
+.common__user-wrap input:nth-child(2) {
+  margin-bottom: 0;
+}
+
+
+.common__user-wrap.password_find input:nth-child(3) {
+  margin-bottom: 0 !important;
+}
+.login-btn,
+.common__user-wrap input[type="submit"] {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--point-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: "SCDream6";
+  font-size: var(--font-size-21);
+  margin-bottom: 3.9rem;
+  margin-top: 3rem;
+  border-radius: 0;
+}
+.login-btn {
+  line-height: 5rem;
+}
+.common__user-wrap.password_find input[type="submit"] {
+  margin-bottom: 2rem;
+}
+
+.common__user-wrap .password__answer-select {
+  width: 100%;
+
+}
+
+.login__list {
+  display: flex;
+  justify-content: center;
+}
+
+.login__list li {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+}
+
+.login__list .dot {
+  margin: 0 1.6rem;
+}
+
+.user__result_wrap .result__content p:nth-child(1) {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+  margin-bottom: 3rem;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+.user__result_wrap .result__content p.title {
+  font-family: "SCDream6";
+
+}
+.user__result_wrap .result__content {
+  font-family: "SCDream4";
+  font-size: var(--font-size-18);
+}
+
+@media (max-width: 640px) {
+
+
+  .common__user-wrap {
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    max-width: calc(100% - var(--width-calc-20));
+    margin: 0 auto;
+  }
+
+  .common__user-wrap h1 {
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
+  }
+
+  .common__user-wrap input[type="submit"] {
+    margin-bottom: 2rem;
+  }
+
+  .login__list li {
+    font-size: 1.4rem;
+  }
+}
+
 
 /*******************************************************************
 // 설명 : 공통 인풋 요소 정의
@@ -1097,13 +1443,14 @@ margin-bottom: 4rem;
   height: var(--common-input-wrap-height);
 }
 
-.input__inner input 
-{
+.input__inner input {
   height: var(--common-input-wrap-height);
 }
+
 .common-box__input {
   width: 100%;
 }
+
 .input__inner .content__list-text {
   display: flex;
   align-items: center;
@@ -1120,7 +1467,7 @@ margin-bottom: 4rem;
   padding: 0 !important;
 }
 
-.common__form input:not(input[type='submit'],input[type='radio']) {
+.common__form input:not(input[type='submit'], input[type='radio']) {
   padding: 0 10px;
   max-width: var(--common-input-size);
   border: 1px solid var(--common-border-color);
@@ -1200,7 +1547,8 @@ margin-bottom: 4rem;
   /* box-sizing: border-box; */
   color: var(--point-color);
 }
-.common__form input[id="check1"]:checked+label::after {
+
+.common__form input[id="check2"]:checked+label::after {
   content: '✔';
   font-size: 15px;
   width: 20px;
@@ -1212,6 +1560,7 @@ margin-bottom: 4rem;
   /* box-sizing: border-box; */
   color: var(--point-color);
 }
+
 .input__inner.bank-account input:nth-child(1) {
   flex: 1;
   margin-right: 1rem;
@@ -1320,7 +1669,7 @@ margin-bottom: 4rem;
   cursor: pointer;
 }
 
-/* 버튼 공통 small */
+/* 버튼 공통  */
 .common__btn-small {
   width: var(--address-search-btn-size);
   height: var(--common-input-wrap-height);
@@ -1332,19 +1681,35 @@ margin-bottom: 4rem;
   font-family: "SCDream4";
   font-size: var(--font-size-15);
 }
+
+.common__btn-big {
+  width: var(--address-search-btn-size);
+  height: var(--common-input-wrap-height);
+  cursor: pointer;
+  border-radius: 2rem;
+  background: var(--point-color);
+  color: #fff;
+  font-family: "SCDream4";
+  font-size: var(--font-size-15);
+  margin-left: 0 !important;
+}
+
 .common__btn-small.mauto {
   display: block;
   margin-left: 0;
   margin: 0 auto;
 }
+
 /* 글작성 페이지 */
 .wrap.board_writing .common__content {
   margin-top: 4rem;
 }
+
 .wrap.board_writing .common__content-wrap {
   width: 100%;
 }
-.wrap.board_writing .common__content-wrap .board__list-box{
+
+.wrap.board_writing .common__content-wrap .board__list-box {
   height: 9rem;
   display: flex;
   align-items: center;
@@ -1356,10 +1721,12 @@ margin-bottom: 4rem;
 .wrap.board_writing .common__content-wrap .board__list-box.file {
   height: 6.9rem;
 }
-.wrap.board_writing .common__content-wrap .board__list-box.file .title{
+
+.wrap.board_writing .common__content-wrap .board__list-box.file .title {
   line-height: 6.9rem;
 }
-.wrap.board_writing .common__content-wrap .board__list-box .title{
+
+.wrap.board_writing .common__content-wrap .board__list-box .title {
   width: 14.1rem;
   text-align: center;
   font-family: "SCDream6";
@@ -1368,24 +1735,29 @@ margin-bottom: 4rem;
   height: 100%;
   line-height: 9rem;
 }
+
 .wrap.board_writing .common__btn-small {
   display: block;
   text-align: center;
   line-height: 3.6rem;
 }
-.wrap.board_writing .board__list-box .content{
-width: 100%;
-padding: 0 1.4rem;
+
+.wrap.board_writing .board__list-box .content {
+  width: 100%;
+  padding: 0 1.4rem;
 }
+
 .wrap.board_writing .board__list-box .content.file {
   display: flex;
   align-items: center;
 }
+
 .wrap.board_writing .board__list-box .content.file .file__name {
   margin-left: 1rem;
   font-family: "SCDream4";
   font-size: var(--font-size-15);
 }
+
 .wrap.board_writing .board__list-box .content input {
   height: 5rem;
   width: 100%;
@@ -1407,28 +1779,90 @@ padding: 0 1.4rem;
   display: flex;
   justify-content: flex-end;
 }
-.square__gray-color{
+
+.common__btn-wrap.center {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(calc(50% - 1rem), auto));
+  gap: 2rem;
+}
+
+.square__gray-color {
   background: #707070 !important;
   border-radius: 0 !important;
   color: #fff !important;
   font-size: 1.5rem;
 }
+
 .square__orange-color {
   border-radius: 0 !important;
   font-size: 1.5rem;
   margin-left: 2rem;
 }
+
 /*******************************************************************
 // 설명 : 반응형 
 ********************************************************************/
 @media (max-width:640px) {
+  .pagination .page__link {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .pagination .page__link>a {
+    line-height: 2.6rem;
+  }
+
+  .pagination .page-list {
+    gap: 0;
+  }
+
+  .c-table tr th {
+    font-size: 1.4rem;
+  }
+
+  .c-table tr {
+    height: 4rem;
+  }
+
+  .c-table tr td {
+    font-size: 1.4rem;
+  }
+
+  .table__top-wrap .table__searching-content {
+    width: 100%;
+  }
+
+  .table__searching-content select:first-child {
+    margin-right: 1rem;
+  }
+
+  .table__top-wrap .search__box {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .table__lsit-select {
+    display: none;
+  }
+
+  .table__top-wrap {
+    width: 100%;
+
+  }
+
+  .total__count {
+    display: none;
+  }
+
   .wrap.board_writing .common__content-wrap .board__list-box .title {
     font-size: 1.4rem;
     width: 10.1rem;
   }
+
   .wrap.withdrawal .form__wrap {
     padding: 3rem 0;
   }
+
   .wrap.withdrawal .common__form {
     margin: 20px auto 0;
   }
@@ -1436,17 +1870,21 @@ padding: 0 1.4rem;
   .common__form .common__form-title {
     margin-bottom: 2rem;
   }
+
   .withdrawal__content {
     width: calc(100% - 2rem);
     margin: 0 auto;
   }
-  .withdrawal__content > p {
+
+  .withdrawal__content>p {
     font-size: 1.3rem;
     margin-bottom: 3rem;
   }
+
   .wrap.password__change .common__fieldset-inner {
     max-width: 36rem !important;
   }
+
   .common__form fieldset .common__fieldset-inner {
     width: calc(100% - var(--width-calc-20));
   }
@@ -1466,6 +1904,7 @@ padding: 0 1.4rem;
   .input-error__message {
     font-size: 1rem;
   }
+
   .input__inner .content__list-text,
   .comments__choose-radio-list span {
     font-size: 1.6rem;

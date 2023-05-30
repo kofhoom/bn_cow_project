@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/_css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </head>
+  <style>
+    footer {
+      margin-top: 0 !important;
+    }
+  </style>
+<body class="background__F8F8FF">
+  <!-- 헤더 -->
+  <div id="div-header"></div>
+  <!-- 아이디찾기 영역 시작 -->
+  <div class="wrap id_find">
+    <div class="common__user-wrap" style="text-align:center">
+      <div class="common__user-inner">
+      <h1 class="small">아이디 찾기</h1>
+      <div class="user__result_wrap">
+         <div class="result__content">
+          <p>요청하신 아이디 찾기 결과입니다.</p>
+          <p>test@test.com</p>
+         </div>
+         <div class="common__btn-wrap center">
+          <p class="common__btn">비밀번호 찾기</p>
+          <p class="common__btn">로그인</p>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!-- 아이디찾기 영역 끝 -->
+  <!-- 푸터 -->
+  <div id="div-footer"></div>
+<script>
+      async function load() {
+      let jsComponent = await import("/_js/fetch.js");
+      jsComponent.headerLayout();
+      jsComponent.footerLayout();
+    }
+    load();
+</script>
+</body>
+</html>

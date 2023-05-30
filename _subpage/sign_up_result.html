@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/_css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </head>
+  <style>
+    footer {
+      margin-top: 0 !important;
+    }
+  </style>
+<body class="background__F8F8FF">
+  <!-- 헤더 -->
+  <div id="div-header"></div>
+  <!-- 가입 신청 완료 영역 시작 -->
+  <div class="wrap id_find">
+    <div class="common__user-wrap" style="text-align:center">
+      <div class="common__user-inner">
+      <h1 class="small">가입 신청 완료</h1>
+      <div class="user__result_wrap">
+         <div class="result__content">
+          <p class="title">관리자 승인 이후 가입 완료 됩니다.</p>
+         </div>
+          <p class="login-btn">메인페이지</p>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!-- 가입 신청 완료 영역 끝 -->
+  <!-- 푸터 -->
+  <div id="div-footer"></div>
+<script>
+      async function load() {
+      let jsComponent = await import("/_js/fetch.js");
+      jsComponent.headerLayout();
+      jsComponent.footerLayout();
+    }
+    load();
+</script>
+</body>
+</html>
